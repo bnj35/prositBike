@@ -522,7 +522,7 @@ def generate_launch_recommendation(df: pd.DataFrame) -> dict:
     
     return recommendation
 
-def predict_future_launch_dates(df: pd.DataFrame, start_date='2025-01-01', months_ahead=12) -> dict:
+def predict_future_launch_dates(df: pd.DataFrame, start_date='2025-09-23', months_ahead=12) -> dict:
     """Predict optimal future launch dates based on historical patterns."""
     from datetime import datetime, timedelta
     import calendar
@@ -637,7 +637,7 @@ def main():
     parser.add_argument("--predict", action="store_true", help="Predict optimal launch day")
     parser.add_argument("--prediction-report", action="store_true", help="Generate comprehensive prediction report")
     parser.add_argument("--future-dates", action="store_true", help="Predict future optimal launch dates")
-    parser.add_argument("--start-date", default="2025-01-01", help="Start date for future predictions (YYYY-MM-DD)")
+    parser.add_argument("--start-date", default="2025-09-23", help="Start date for future predictions (YYYY-MM-DD)")
     parser.add_argument("--all-analysis", action="store_true", help="Run all analysis types")
     parser.add_argument("--head", type=int, default=5, help="Show first N rows (ignored with analysis flags)")
     args = parser.parse_args()
