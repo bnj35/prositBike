@@ -1,0 +1,103 @@
+# Bike Sharing Data Analysis
+
+A Python package for analyzing bike sharing CSV data with weather, seasonal, and rental pattern insights.
+
+## Usage
+
+### Command Line Interface
+
+#### Basic Usage
+```bash
+# Show first 5 rows
+bike-analyze data/day.csv
+
+# Show first 10 rows
+bike-analyze data/day.csv --head 10
+
+# Filter data with pandas query
+bike-analyze data/day.csv --query "cnt > 5000"
+```
+
+#### Analysis Options
+```bash
+# Summary statistics
+bike-analyze data/day.csv --summary
+
+# Rental pattern analysis
+bike-analyze data/day.csv --rentals
+
+# Weather impact analysis
+bike-analyze data/day.csv --weather
+
+# Seasonal pattern analysis
+bike-analyze data/day.csv --seasonal
+
+# Run all analyses
+bike-analyze data/day.csv --all-analysis
+```
+
+#### Combined Usage
+```bash
+# Filter high-rental days and analyze patterns
+bike-analyze data/day.csv --query "cnt > 4000" --all-analysis
+```
+
+### Docker Usage
+```bash
+# Build and start the analysis environment
+docker compose up --build
+
+# Access Jupyter Lab at http://localhost:8888
+```
+
+### Development
+```bash
+# Install in development mode
+pip install -e .[dev]
+
+# Run tests
+pytest tests/
+```
+
+## Data Description
+
+The bike sharing dataset contains the following key columns:
+- **cnt**: Total bike rentals (casual + registered)
+- **casual**: Casual user rentals
+- **registered**: Registered user rentals
+- **season**: Season (1:spring, 2:summer, 3:fall, 4:winter)
+- **weathersit**: Weather situation (1:clear, 2:mist, 3:light snow/rain)
+- **temp**: Normalized temperature
+- **hum**: Normalized humidity
+- **windspeed**: Normalized wind speed
+- **weekday**: Day of week
+- **workingday**: Working day indicator
+- **holiday**: Holiday indicator
+
+## Analysis Features
+
+1. **Rental Analysis**: Total rentals, daily averages, casual vs registered users
+2. **Weather Impact**: Correlation with temperature, humidity, wind speed
+3. **Seasonal Patterns**: Analysis by season, weekday, working days, holidays
+4. **Custom Filtering**: Use pandas queries to filter data before analysis
+
+## Project Structure
+
+```
+prositBike/
+├── docker-compose.yml       # Docker Compose configuration
+├── Dockerfile              # Docker image definition
+├── README.md               # This file
+├── data/                   # CSV data files
+│   ├── day.csv            # Daily bike sharing data
+│   ├── hour.csv           # Hourly bike sharing data
+│   └── Readme.txt         # Data description
+└── app/
+    └── bike_project/       # Python package
+        ├── pyproject.toml  # Package configuration
+        ├── bike/           # Main package
+        │   ├── __init__.py
+        │   └── data_analysis.py  # Analysis functions
+        └── tests/          # Unit tests
+            └── test_data_analysis.py
+```
