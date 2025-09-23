@@ -29,8 +29,14 @@ bike-analyze data/day.csv --rentals
 # Weather impact analysis
 bike-analyze data/day.csv --weather
 
-# Seasonal pattern analysis
+# Analyze seasonal patterns
 bike-analyze data/day.csv --seasonal
+
+# Launch strategy analysis (NEW!)
+bike-analyze data/day.csv --launch
+
+# Comprehensive launch recommendation (NEW!)
+bike-analyze data/day.csv --recommendation
 
 # Run all analyses
 bike-analyze data/day.csv --all-analysis
@@ -79,7 +85,9 @@ The bike sharing dataset contains the following key columns:
 1. **Rental Analysis**: Total rentals, daily averages, casual vs registered users
 2. **Weather Impact**: Correlation with temperature, humidity, wind speed
 3. **Seasonal Patterns**: Analysis by season, weekday, working days, holidays
-4. **Custom Filtering**: Use pandas queries to filter data before analysis
+4. **Launch Strategy**: Optimal launch timing, market conditions, stability analysis
+5. **Launch Recommendations**: Comprehensive business launch strategy based on data
+6. **Custom Filtering**: Use pandas queries to filter data before analysis
 
 ## Project Structure
 
