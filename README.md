@@ -8,6 +8,7 @@ A Python package for analyzing bike sharing CSV data with weather, seasonal, and
 
 #### Basic Usage
 ```bash
+# Since it's a dockerize environment don't forget "docker exec" before each in your terminal
 # Show first 5 rows
 bike-analyze data/day.csv
 
@@ -20,6 +21,7 @@ bike-analyze data/day.csv --query "cnt > 5000"
 
 #### Analysis Options
 ```bash
+#  Since it's a dockerize environment don't forget "docker exec" before each in your terminal
 # Summary statistics
 bike-analyze data/day.csv --summary
 
@@ -32,10 +34,10 @@ bike-analyze data/day.csv --weather
 # Analyze seasonal patterns
 bike-analyze data/day.csv --seasonal
 
-# Launch strategy analysis (NEW!)
+# Launch strategy analysis 
 bike-analyze data/day.csv --launch
 
-# Comprehensive launch recommendation (NEW!)
+# Comprehensive launch recommendation 
 bike-analyze data/day.csv --recommendation
 
 # Run all analyses
