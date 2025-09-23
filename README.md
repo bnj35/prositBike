@@ -56,6 +56,24 @@ docker exec bike-analysis python -m bike.data_analysis /data/day.csv --future-da
 docker exec bike-analysis python -m bike.data_analysis /data/day.csv --predict --prediction-report --future-dates
 ```
 
+#### Plotting / Graphs
+```bash
+# Generate histograms (defaults: cnt, temp, hum, windspeed) and save to the container's /data/plots
+docker exec bike-analysis python -m bike.graphs /data/day.csv --hist --out /data/plots
+
+# Generate a regression plot (default x=temp, y=cnt)
+docker exec bike-analysis python -m bike.graphs /data/day.csv --reg --x temp --y cnt --out /data/plots
+
+# Generate both histograms and regression together
+docker exec bike-analysis python -m bike.graphs /data/day.csv --hist --reg --x temp --y cnt --out /data/plots
+
+# Specify custom histogram columns
+docker exec bike-analysis python -m bike.graphs /data/day.csv --hist --hist-cols cnt hum --out /data/plots
+ 
+# Generate presentation-ready plots (time series, monthly, weekday, holiday, boxplots, heatmap)
+docker exec bike-analysis python -m bike.graphs /data/day.csv --presentation --out /data/plots
+```
+
 #### Combined Usage
 ```bash
 # Filter high-rental days and analyze patterns
