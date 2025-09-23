@@ -419,6 +419,7 @@ def generate_launch_prediction_report(df: pd.DataFrame) -> dict:
 
 def generate_launch_recommendation(df: pd.DataFrame) -> dict:
     """Generate launch recommendations based on analysis (legacy function)."""
+    recommendation = {}
     # Use the new prediction system
     prediction_report = generate_launch_prediction_report(df)
     
@@ -430,9 +431,6 @@ def generate_launch_recommendation(df: pd.DataFrame) -> dict:
         'strategy': prediction_report.get('future_launch_guidance', {})
     }
     
-    return recommendation
-    """Generate comprehensive launch recommendation based on all analysis."""
-    recommendation = {}
     
     # Get all analysis data
     rental_stats = analyze_rentals(df)
