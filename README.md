@@ -42,6 +42,18 @@ bike-analyze data/day.csv --recommendation
 
 # Run all analyses
 bike-analyze data/day.csv --all-analysis
+
+# Predict best historical launch day
+docker exec bike-analysis python -m bike.data_analysis /data/day.csv --predict
+
+# Get comprehensive analysis report
+docker exec bike-analysis python -m bike.data_analysis /data/day.csv --prediction-report
+
+# Predict future launch dates
+docker exec bike-analysis python -m bike.data_analysis /data/day.csv --future-dates --start-date "2025-06-01"
+
+# Run all predictions together
+docker exec bike-analysis python -m bike.data_analysis /data/day.csv --predict --prediction-report --future-dates
 ```
 
 #### Combined Usage
