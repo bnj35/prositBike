@@ -2,7 +2,6 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 import pandas as pd
-import numpy as np
 
 def load_csv(path: str | Path) -> pd.DataFrame:
     """Load a bike sharing CSV file into a pandas DataFrame."""
@@ -303,7 +302,7 @@ def predict_optimal_launch_day(df: pd.DataFrame) -> dict:
         weekday_names = {0: 'Monday', 1: 'Tuesday', 2: 'Wednesday', 3: 'Thursday', 4: 'Friday', 5: 'Saturday', 6: 'Sunday'}
         weather_names = {1: 'Clear', 2: 'Misty', 3: 'Rain/Snow'}
         month_names = {1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun', 
-                      7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dec'}
+                        7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', 12: 'Dec'}
         
         prediction['top_launch_days'] = []
         for idx, row in top_days.iterrows():

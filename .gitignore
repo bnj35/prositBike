@@ -133,3 +133,5 @@ data/*.csv
 # Temporary analysis files
 temp_analysis/
 scratch/
+
+calculs.md
