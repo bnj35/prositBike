@@ -124,9 +124,9 @@ def plot_weekday_distribution(df: pd.DataFrame, out_dir: Path = Path('plots')) -
     plt.figure(figsize=(8, 4))
     sns.barplot(x=weekday.index, y=weekday.values, palette='magma')
     plt.title('Average Rentals by Weekday')
-    plt.xlabel('Weekday (0=Mon)')
+    plt.xlabel('Weekday (0=Sunday)')
     plt.ylabel('Average Rentals')
-    plt.xticks(range(0,7), ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'])
+    plt.xticks(range(0,7), ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'])
     fname = out_dir / 'avg_rentals_by_weekday.png'
     plt.tight_layout()
     plt.savefig(fname)
